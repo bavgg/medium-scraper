@@ -1,9 +1,13 @@
 appdirs==1.4.4
+beautifulsoup4==4.12.3
 certifi==2024.12.14
+et_xmlfile==2.0.0
 importlib_metadata==8.5.0
+openpyxl==3.1.5
 pyee==11.1.1
 pyppeteer==2.0.0
 pyppeteer_stealth==2.7.4
+soupsieve==2.6
 tqdm==4.67.1
 typing_extensions==4.12.2
 urllib3==1.26.20
