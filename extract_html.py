@@ -20,7 +20,7 @@ async def wait_for_network_idle(page, timeout=5000):
         print("Network idle check timed out. Continuing without waiting further.")
 
 
-async def scroll_to_bottom(page, scroll_pause_time=8, max_scrolls=80):
+async def scroll_to_bottom(page, scroll_pause_time=8, max_scrolls=5):
     """Scroll to the bottom of the page to load more content."""
     previous_height = await page.evaluate("document.body.scrollHeight")
     scrolls = 0
