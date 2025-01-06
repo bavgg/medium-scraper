@@ -36,7 +36,7 @@ def get_url(component):
     clean_url = href_value.split("?")[0]
     return "https://medium.com" + clean_url
 
-def scrape_to_json_and_excel(input_file_path = "to_scrape.html", json_output_path='data.json', excel_output_path='data.xlsx'):
+def scrape_to_json_and_excel(input_file_path = "to_scrape.html", json_output_path='DATA.json', excel_output_path='DATA.xlsx'):
     """
     Function to scrape HTML content and save to JSON and Excel.
     """
@@ -83,6 +83,9 @@ def scrape_to_json_and_excel(input_file_path = "to_scrape.html", json_output_pat
     # Step 8: Save the Excel file
     wb.save(excel_output_path)
     print(f"Data saved to {json_output_path} and {excel_output_path}")
+    
+    # Step 9: Remove the file
+    os.remove(input_file_path)
 
 # Optional entry point for direct execution
 # if __name__ == "__main__":
