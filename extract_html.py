@@ -20,7 +20,9 @@ async def wait_for_network_idle(page, timeout=5000):
         print("Network idle check timed out. Continuing without waiting further.")
 
 
-async def scroll_to_bottom(page, scroll_pause_time=8, max_scrolls=5):
+
+
+async def scroll_to_bottom(page, scroll_pause_time=8, max_scrolls=80):
     """Scroll to the bottom of the page to load more content."""
     previous_height = await page.evaluate("document.body.scrollHeight")
     scrolls = 0
@@ -84,13 +86,13 @@ async def main():
     await scroll_to_bottom(page)
 
     # Take a screenshot after loading all content
-    await page.screenshot({"path": "example.png"})
+    # await page.screenshot({"path": "example.png"})
 
     # Get the full HTML content
     html = await page.content()
-    with open("medium_page_full.html", "w", encoding="utf-8") as f:
+    with open("to_clean.html", "w", encoding="utf-8") as f:
         f.write(html)
-    print("HTML saved to medium_page_full.html")
+    print("HTML saved to to_clean.html")
 
     await browser.close()
 

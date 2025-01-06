@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import os
 
 # file name
-input_file_path = "medium_page_full.html"
+input_file_path = "to_clean.html"
 with open(input_file_path, "r") as file:
     html_content = file.read()
 
@@ -17,10 +17,10 @@ for script in soup.find_all('script'):
 cleaned_html = soup.prettify()
 
 # Save the prettified HTML to a file
-with open('cleaned_file.html', 'w', encoding='utf-8') as file:
+with open('to_scrape.html', 'w', encoding='utf-8') as file:
     file.write(cleaned_html)
 
-print("HTML saved as 'cleaned_file.html'")
+print("HTML saved as 'to_scrape.html'")
 
 # Remove the original file
 os.remove(input_file_path)
